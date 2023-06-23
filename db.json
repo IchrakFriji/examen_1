@@ -1,0 +1,45 @@
+{
+  "players": [
+    {
+      "id": 1,
+      "name": "ichrak friji",
+      "equipe": "A",
+      "etat": false
+    },
+    {
+      "name": "Ichrak 3",
+      "equipe": "B",
+      "etat": true,
+      "id": 2
+    },
+    {
+      "name": "Ichrak ben ichrak",
+      "equipe": "C",
+      "id": 3,
+      "etat": true
+    },
+    {
+      "name": "Ichrak",
+      "equipe": "Ccc",
+      "id": 4,
+      "etat": false
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

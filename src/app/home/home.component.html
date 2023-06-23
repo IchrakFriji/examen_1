@@ -1,0 +1,33 @@
+
+
+<div class="container" style="padding: 50px;">
+    <div class="row">
+      <h2 style="margin-bottom: 20px;">Liste des offres d'emploi</h2>
+      <table class=" table-light">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Equipe</th>
+            <th>État</th>
+            <th>Inverser Etat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let player of listPlayer" [ngStyle]="{ 'background-color': player.etat ? 'green' : 'red' }">
+            <td >{{ player.id }}</td>
+            <td>{{ player.name }}</td>
+            <td>{{ player.equipe }}</td>
+            <td>{{ player.etat ? 'Actif' : 'Inactif' }}</td>
+            <td>  <a href="#" style="color:white ;" (click)="inversEtat(player.id)">
+                {{ player.etat ? 'Désaffecter' : 'Affecter' }}
+              </a></td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-dark" style="margin-top:35px ;" (click)="calculerBilan()">Bilan</button>
+      <p style="margin-top: 20px;">Nombre  des joueurs : {{ PlayerNumber }}</p>
+    </div>
+  </div>
+  
+  

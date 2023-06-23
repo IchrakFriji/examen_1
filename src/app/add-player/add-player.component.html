@@ -1,0 +1,35 @@
+
+<div class="contanier">
+    <div class="row" style="margin:100px ;">
+        <h5>ADD PLAYER</h5>
+        <form #myForm="ngForm" (ngSubmit)="save()">
+            <div class="mb-3">
+              <label for="title" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="player.name" #name="ngModel" >
+              <div id="nameError" class="form-text" *ngIf="name.invalid && (name.dirty || name.touched)"[ngStyle]="{ 'color': 'rgb(230, 24, 24)' }">
+                <div *ngIf="name.errors?.['required']">name is required.</div>
+                
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="quantity" class="form-label">equipe</label>
+              <input type="text" class="form-control" id="equipe" name="equipe" required [(ngModel)]="player.equipe" #equipe="ngModel" minlength="3" maxlength="7" >
+              <div class="form-text" *ngIf="equipe.invalid && (equipe.dirty || equipe.touched)" [ngStyle]="{ 'color': 'rgb(230, 24, 24)' }">
+                <div *ngIf="equipe.errors?.['required']"> equipe is required.</div>
+                <div *ngIf="equipe.errors?.['minlength']"> equipe must be at least 3 characters long.</div>
+                <div *ngIf="equipe.errors?.['maxlength']"> equipe must be 7 characters max.</div>
+              
+              </div>
+            </div>
+            <div class="mb-3">
+                <label>Etat</label>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="player.etat">
+                    <option value="true">Actif</option>
+                    <option value="false">Inactif</option>
+                  </select>
+            </div>
+          
+            <button type="submit" class="btn btn-primary"[disabled]="myForm.invalid">Add player</button>
+          </form>
+    </div>
+</div>
